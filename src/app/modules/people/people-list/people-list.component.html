@@ -1,0 +1,53 @@
+<div>
+  <div>
+    <h2>Pessoas cadastradas</h2>
+  </div>
+
+  <div  id="loading-div" *ngIf="isLoading; else table " class="loading" >
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+
+  <ng-template #table>
+    <div id="button-group-div" class="button-row">
+      <a [routerLink]="['/add']"  mat-raised-button color="primary">Add Person</a>
+    </div>
+    <div id="table-div" *ngIf="people.length>0;else empty">
+      <table mat-table [dataSource]="people" class="mat-elevation-z8 people-table">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cpf">
+          <th mat-header-cell *matHeaderCellDef> CPF </th>
+          <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="age">
+          <th mat-header-cell *matHeaderCellDef> Idade </th>
+          <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+    </div>
+  </ng-template>
+
+  <ng-template #empty>
+    <div id="empty-list-div" class="loading">
+      <h6>Não existem pessoas cadastradas ainda</h6>
+    </div>
+  </ng-template>
+
+
+
+</div>

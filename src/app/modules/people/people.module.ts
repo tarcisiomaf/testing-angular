@@ -8,18 +8,19 @@ import {MatTableModule, MatButtonModule, MatProgressSpinnerModule, MatFormFieldM
 import { PeopleListComponent } from './people-list/people-list.component';
 import { PeopleCreateComponent } from './people-create/people-create.component';
 import {RouterModule} from '@angular/router';
+import { PeopleViewComponent } from './people-view/people-view.component';
 
 
 @NgModule({
-  declarations: [PeopleListComponent, PeopleCreateComponent],
+  declarations: [PeopleListComponent, PeopleCreateComponent, PeopleViewComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
+    RouterModule,
     MatTableModule,
     MatButtonModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
-    RouterModule,
     MatInputModule
   ],
   entryComponents: [

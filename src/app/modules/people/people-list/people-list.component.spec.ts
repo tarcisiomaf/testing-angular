@@ -4,6 +4,7 @@ import { PeopleListComponent } from './people-list.component';
 import {MatTableModule, MatButtonModule, MatProgressSpinnerModule} from '@angular/material';
 import {PeopleService} from '../../../services/people-service/people.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
 
 describe('PeopleListComponent', () => {
@@ -13,7 +14,7 @@ describe('PeopleListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PeopleListComponent],
-      imports: [ MatTableModule, MatButtonModule, MatProgressSpinnerModule, HttpClientTestingModule ],
+      imports: [ MatTableModule, MatButtonModule, MatProgressSpinnerModule, HttpClientTestingModule, RouterTestingModule],
       providers: [PeopleService]
     })
     .compileComponents();

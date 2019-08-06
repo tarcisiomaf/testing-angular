@@ -26,6 +26,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Tests');
   });
 
-
-
 });

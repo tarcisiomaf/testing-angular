@@ -1,0 +1,34 @@
+<div>
+
+  <div  id="loading-div" *ngIf="isLoading; else details " class="loading" >
+    <mat-spinner diameter="50"></mat-spinner>
+  </div>
+
+
+
+  <ng-template #details>
+    <div id="details-div">
+      <div id="title-div">
+        <h2 id="title-view">{{person?.name}}</h2>
+      </div>
+      <div id="info" class="mat-elevation-z8 info-card">
+        <ul class="list-detail">
+          <li><span class="span-strong">CPF: </span>{{person?.cpf}}</li>
+          <li><span class="span-strong">Idade: </span>{{person?.age}}</li>
+          <li><span class="span-strong">id: </span>_{{person?.id}}</li>
+
+          <li><span class="span-strong">Descrição: </span>Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Dolor dolore eius error esse illo iusto laudantium, obcaecati perspiciatis ut vitae.</li>
+
+        </ul>
+        <div class="button-menu" *ngIf="person">
+          <a  [routerLink]="['/add',person.id]" mat-raised-button color="primary">Editar</a>
+          <button (click)="deletePerson()" mat-raised-button color="warn" type="button">APAGAR</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+
+</div>
+

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import {ReactiveFormsModule} from '@angular/forms';
 import {MatTableModule, MatButtonModule, MatProgressSpinnerModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 
 
@@ -17,6 +17,7 @@ import { PeopleViewComponent } from './people-view/people-view.component';
     CommonModule,
     BrowserAnimationsModule,
     RouterModule,
+    ReactiveFormsModule,
     MatTableModule,
     MatButtonModule,
     MatProgressSpinnerModule,

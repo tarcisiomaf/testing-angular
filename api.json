@@ -8,9 +8,9 @@
     },
     {
       "name": "Eduardo Araujo",
+      "age": 42,
       "cpf": "000.000.000-01",
-      "id": "2",
-      "age": 42
+      "id": "2"
     },
     {
       "name": "Otavio Augusto",
@@ -29,6 +29,12 @@
       "cpf": "000.000.000-05",
       "id": "6",
       "age": 28
+    },
+    {
+      "id": "XskY7V-",
+      "name": "Amanda Freitas",
+      "age": 22,
+      "cpf": "000.000.000.00"
     }
   ]
 }

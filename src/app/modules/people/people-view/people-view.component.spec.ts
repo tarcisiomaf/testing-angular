@@ -16,7 +16,7 @@ describe('PeopleViewComponent', () => {
   let service: PeopleService;
   let router: Router;
 
-  beforeEach((() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ MatTableModule, MatButtonModule, MatFormFieldModule, MatProgressSpinnerModule,
         HttpClientTestingModule, RouterTestingModule],

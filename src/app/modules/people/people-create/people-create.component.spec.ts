@@ -47,7 +47,16 @@ describe('PeopleCreateComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should render loading', () => {
+    component.isLoading = true;
 
+    fixture.detectChanges();
+
+    const spinner = fixture.nativeElement.querySelector('#loading-div');
+
+    expect(spinner).not.toBeNull();
+
+  });
   it('should start creating a new person', () => {
 
     spyOn(component, 'isEdit').and.callFake(() => undefined);
@@ -60,6 +69,7 @@ describe('PeopleCreateComponent', () => {
     expect(component.peopleForm.value.cpf).toBeNull();
 
   });
+
   it('should start editing a person', () => {
 
     const mockData = {name: 'Antonio Silva', cpf: '000.000.000-00', id: '1', age: 11};
@@ -76,6 +86,7 @@ describe('PeopleCreateComponent', () => {
     expect(component.isLoading).toBe(false);
     expect(component.hasError).toBe(false);
   });
+
   it('should start editing a person and get a error', () => {
 
     const mockData = {name: 'Antonio Silva', cpf: '000.000.000-00', id: '1', age: 11};
@@ -134,7 +145,6 @@ describe('PeopleCreateComponent', () => {
     expect(component.errorMessage).toEqual(errorMock);
     expect(component.isLoading).toEqual(false);
   });
-
 
   it('should update a existing person with success', () => {
 

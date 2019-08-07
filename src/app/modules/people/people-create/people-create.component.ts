@@ -36,40 +36,49 @@ export class PeopleCreateComponent implements OnInit {
 
   onSubmit() {
     const data = this.peopleForm.value;
-
+    this.isLoading= true;
     if (this.id) {
       this.api.update(this.id, data).subscribe(
         (s) => {
+          this.isLoading= false;
           this.router.navigate(['detail', s.id]);
         },
         e => {
           this.hasError = true;
           this.errorMessage = e;
+          this.isLoading = false;
         }
       );
     } else {
       this.api.add(data).subscribe(
         (s) => {
           this.router.navigate(['detail', s.id]);
+          this.isLoading = false;
         },
         e => {
           this.hasError = true;
           this.errorMessage = e;
+          this.isLoading = false;
         }
       );
     }
   }
 
-  ngOnInit() {
+  isEdit() {
+    return this.route.snapshot.params.id;
+  }
+
+  prepareForm(){
     this.peopleForm = this.formBuilder.group({
       id : [null],
       name : [null, Validators.required],
       age : [null, Validators.required],
       cpf : [null, Validators.required]
     });
-    if (this.route.snapshot.params.id) {
+    const edit = this.isEdit();
+    if (edit) {
       this.isLoading = true;
-      this.api.findById(this.route.snapshot.params.id)
+      this.api.findById(edit)
         .subscribe(s => {
           this.isLoading = false;
 
@@ -79,7 +88,7 @@ export class PeopleCreateComponent implements OnInit {
             id: s.id,
             cpf: s.cpf,
             age: s.age
-        });
+          });
           this.peopleForm.controls.id.disable();
         }, e => {
           this.isLoading = false;
@@ -87,7 +96,9 @@ export class PeopleCreateComponent implements OnInit {
           this.errorMessage = e;
         });
     }
-
+  }
+  ngOnInit() {
+    this.prepareForm();
   }
 
 }

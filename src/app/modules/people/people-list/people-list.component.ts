@@ -11,6 +11,8 @@ import {PeopleService} from '../../../services/people-service/people.service';
 export class PeopleListComponent implements OnInit {
 
   isLoading = true;
+  isError = false;
+  errorMessage = undefined;
   displayedColumns: string[] = ['id', 'name', 'cpf', 'age'];
   people: Person [] = [];
 
@@ -21,13 +23,14 @@ export class PeopleListComponent implements OnInit {
     this.api.find().subscribe(
       s => {
         this.people = s;
-        },
-      e => {
-        console.log(e);
-        },
-      ( ) => {
         this.isLoading = false;
-      });
+
+      },
+      e => {
+        this.isLoading = false;
+        this.isError = true;
+        this.errorMessage = e;
+        });
   }
 
   ngOnInit() {

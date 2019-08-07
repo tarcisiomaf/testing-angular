@@ -73,8 +73,5 @@ describe('PeopleViewComponent', () => {
     component.getPerson();
     fixture.detectChanges();
 
-
-    console.log(component);
-
   });
 });

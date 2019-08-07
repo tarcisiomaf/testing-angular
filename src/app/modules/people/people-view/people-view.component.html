@@ -22,7 +22,7 @@
 
         </ul>
         <div class="button-menu" *ngIf="person">
-          <a  [routerLink]="['/add',person.id]" mat-raised-button color="primary">Editar</a>
+          <button (click)="editPerson()"  mat-raised-button color="primary">Editar</button>
           <button (click)="deletePerson()" mat-raised-button color="warn" type="button">APAGAR</button>
         </div>
       </div>

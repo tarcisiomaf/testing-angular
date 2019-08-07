@@ -5,6 +5,7 @@ import {MatTableModule, MatButtonModule, MatProgressSpinnerModule} from '@angula
 import {PeopleService} from '../../../services/people-service/people.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {RouterTestingModule} from '@angular/router/testing';
+import {Person} from '../../../models/Person';
 
 
 
@@ -70,7 +71,7 @@ describe('PeopleListComponent', () => {
   });
 
   it('should render people table', () => {
-    const mockData = [{name: 'Antonio Silva', cpf: '000.000.000-00', id: '1', age: 11},
+    const mockData: Person[] = [{name: 'Antonio Silva', cpf: '000.000.000-00', id: '1', age: 11},
       {name: 'Eduardo Araujo', cpf: '000.000.000-01', id: '2',  age: 42},
       {name: 'Mônica Freitas', cpf: '000.000.000-02', id: '3',  age: 23}];
 

@@ -5,7 +5,7 @@ import {PeopleCreateComponent} from './modules/people/people-create/people-creat
 import {PeopleViewComponent} from './modules/people/people-view/people-view.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: PeopleListComponent

@@ -12,6 +12,8 @@ export class PeopleViewComponent implements OnInit {
 
   person: Person = undefined;
   isLoading = true;
+  isError = false;
+  errorMessage = undefined;
 
   constructor(private route: ActivatedRoute, private api: PeopleService, private router: Router) { }
 
@@ -25,29 +27,31 @@ export class PeopleViewComponent implements OnInit {
         if (!s) {
           this.toList();
         }
+        this.isLoading = false;
         this.person = s;
       },
       e => {
-        console.log(e);
-      },
-      () => {
+        this.errorMessage = e;
+        this.isError = true;
         this.isLoading = false;
-      }
-    );
+      });
   }
   deletePerson() {
     this.isLoading = true;
     this.api.remove(this.person.id)
       .subscribe(
         s => {
+          this.isLoading = false;
           this.router.navigate(['/']);
         },
         e => {
-          console.log('Algo inesperado aconteceu');
-        },
-        () => {
           this.isLoading = false;
+          this.errorMessage = e;
+          this.isError = true;
         });
+  }
+  editPerson() {
+    this.router.navigate(['add', this.person.id]);
   }
   ngOnInit() {
     this.getPerson();

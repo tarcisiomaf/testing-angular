@@ -51,7 +51,7 @@ export class PeopleViewComponent implements OnInit {
         });
   }
   editPerson() {
-    this.router.navigate(['add', this.person.id]);
+    this.router.navigate(['edit', this.person.id]);
   }
   ngOnInit() {
     this.getPerson();

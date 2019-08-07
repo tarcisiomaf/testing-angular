@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {MyErrorStateMatcher, PeopleCreateComponent} from './people-create.component';
+import {PeopleCreateComponent} from './people-create.component';
 import {
   MatButtonModule,
   MatFormFieldModule, MatInputModule,

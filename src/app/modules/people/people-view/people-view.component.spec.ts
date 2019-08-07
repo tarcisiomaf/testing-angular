@@ -134,7 +134,7 @@ describe('PeopleViewComponent', () => {
 
     component.editPerson();
 
-    expect(router.navigate).toHaveBeenCalledWith(['add', '2']);
+    expect(router.navigate).toHaveBeenCalledWith(['edit', '2']);
 
   });
 

@@ -8,17 +8,17 @@
   </div>
 
   <ng-template #form>
-    <div class="mat-elevation-z8 form-card">
+    <div class="mat-elevation-z8 form-card" id="person-form">
       <form [formGroup]="peopleForm" (ngSubmit)="onSubmit()">
         <div *ngIf="peopleForm.get('id').value">
           <mat-form-field >
-            <input matInput placeholder="id" [errorStateMatcher]="matcher"  formControlName="id"/>
+            <input id="id" matInput placeholder="id" [errorStateMatcher]="matcher"  formControlName="id"/>
           </mat-form-field>
         </div>
 
         <div>
           <mat-form-field>
-            <input matInput placeholder="Nome" [errorStateMatcher]="matcher"  formControlName="name"/>
+            <input id="name" matInput placeholder="Nome" [errorStateMatcher]="matcher"  formControlName="name"/>
             <mat-error>
               <span *ngIf="!peopleForm.get('name').valid && peopleForm.get('name').touched">Entre com o nome da pessoa</span>
             </mat-error>
@@ -26,7 +26,7 @@
         </div>
         <div>
           <mat-form-field >
-            <input matInput placeholder="Idade" type="number" min="0" max="120" [errorStateMatcher]="matcher"  formControlName="age"/>
+            <input  id="age" matInput placeholder="Idade" type="number" min="0" max="120" [errorStateMatcher]="matcher"  formControlName="age"/>
             <mat-error>
               <span  *ngIf="!peopleForm.get('age').valid && peopleForm.get('age').touched">Entre com a idade</span>
             </mat-error>
@@ -34,7 +34,7 @@
         </div>
         <div>
           <mat-form-field >
-            <input matInput placeholder="CPF" [errorStateMatcher]="matcher"  formControlName="cpf"/>
+            <input id="cpf" matInput placeholder="CPF" [errorStateMatcher]="matcher"  formControlName="cpf"/>
             <mat-error>
               <span *ngIf="!peopleForm.get('cpf').valid && peopleForm.get('cpf').touched">Entre com o cpf</span>
             </mat-error>
@@ -42,7 +42,7 @@
         </div>
 
         <div style="margin-top:10px ">
-          <button  [disabled]="!peopleForm.valid" mat-raised-button color="primary" type="submit">Salvar</button>
+          <button id="save" [disabled]="!peopleForm.valid" mat-raised-button color="primary" type="submit">Salvar</button>
         </div>
       </form>
 

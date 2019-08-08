@@ -23,6 +23,7 @@ describe('PeopleListComponent', () => {
       providers: [PeopleService]
     }).compileComponents();
   }));
+
   beforeEach( () => {
     fixture = TestBed.createComponent(PeopleListComponent);
     component = fixture.componentInstance;

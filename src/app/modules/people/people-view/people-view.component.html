@@ -13,17 +13,17 @@
       </div>
       <div id="info" class="mat-elevation-z8 info-card">
         <ul class="list-detail">
-          <li><span class="span-strong">CPF: </span>{{person?.cpf}}</li>
-          <li><span class="span-strong">Idade: </span>{{person?.age}}</li>
-          <li><span class="span-strong">id: </span>_{{person?.id}}</li>
+          <li><span class="span-strong">CPF: </span> <span id="cpf-value" >{{person?.cpf}}</span></li>
+          <li><span class="span-strong">Idade: </span> <span id="age-value" >{{person?.age}}</span></li>
+          <li><span class="span-strong">id: </span> <span id="id-value">{{person?.id}}</span></li>
 
           <li><span class="span-strong">Descrição: </span>Lorem ipsum dolor sit amet, consectetur
             adipisicing elit. Dolor dolore eius error esse illo iusto laudantium, obcaecati perspiciatis ut vitae.</li>
 
         </ul>
         <div class="button-menu" *ngIf="person">
-          <button (click)="editPerson()"  mat-raised-button color="primary" type="button">Editar</button>
-          <button (click)="deletePerson()" mat-raised-button color="warn" type="button">APAGAR</button>
+          <button id="edit-button" (click)="editPerson()"  mat-raised-button color="primary" type="button">Editar</button>
+          <button id="delete-button"  (click)="deletePerson()" mat-raised-button color="warn" type="button">APAGAR</button>
         </div>
       </div>
     </div>

@@ -17,8 +17,6 @@ describe('workspace-project App', () => {
     detailPage = new DetailPage();
   });
 
-
-
   it('show table', async () => {
       await listPage.navigateTo();
       expect(listPage.hasTitle()).toBe(true);

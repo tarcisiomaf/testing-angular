@@ -1,6 +1,6 @@
 <div>
   <div>
-    <h2>Pessoas cadastradas</h2>
+    <h2 id="list-title">Pessoas cadastradas</h2>
   </div>
 
   <div  id="loading-div" *ngIf="isLoading; else table " class="loading" >
@@ -9,10 +9,10 @@
 
   <ng-template #table>
     <div id="button-group-div" class="button-row">
-      <a [routerLink]="['/add']"  mat-raised-button color="primary">Adicionar Pessoa</a>
+      <a id="add-button" [routerLink]="['/add']"  mat-raised-button color="primary">Adicionar Pessoa</a>
     </div>
-    <div id="table-div" *ngIf="people.length>0;else empty">
-      <table mat-table [dataSource]="people" class="mat-elevation-z8 people-table">
+    <div id="table-div" >
+      <table *ngIf="people.length>0;else empty" mat-table [dataSource]="people" class="mat-elevation-z8 people-table">
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -36,7 +36,8 @@
 
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['detail',row.id]"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            [routerLink]="['detail',row.id]"  class="p-table-row"  [id]="row.id"></tr>
 
       </table>
     </div>
@@ -44,7 +45,7 @@
 
   <ng-template #empty>
     <div id="empty-list-div" class="loading">
-      <h6>Não existem pessoas cadastradas ainda</h6>
+      <h5>Não existem pessoas cadastradas ainda</h5>
     </div>
   </ng-template>
 

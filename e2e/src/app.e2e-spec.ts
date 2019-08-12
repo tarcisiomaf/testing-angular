@@ -6,6 +6,7 @@ import {DetailPage} from './detailPage.po';
 
 describe('workspace-project App', () => {
 
+
   let listPage: ListPage;
   let formPage: FormPage;
   let detailPage: DetailPage;
@@ -84,4 +85,5 @@ describe('workspace-project App', () => {
       level: logging.Level.SEVERE,
     } as logging.Entry));
   });
+
 });

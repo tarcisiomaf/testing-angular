@@ -6,11 +6,15 @@
     "start:dev": "ng serve",
     "build": "ng build",
     "start": "node server.js",
-    "postinstall": "ng build --aot --prod",
+    "postinstall": "npm i",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "mock": "json-server -p 3500 api.json"
+  },
+  "engines": {
+    "node": "10.16.2",
+    "npm": "6.9.0"
   },
   "private": true,
   "dependencies": {

@@ -10,4 +10,6 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(`${__dirname}/dist/${nomeApp}/index.html`));
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, ()=>{
+  console.log(`Running app on port ${process.env.PORT}`)
+});

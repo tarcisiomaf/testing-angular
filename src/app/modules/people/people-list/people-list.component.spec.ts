@@ -67,7 +67,7 @@ describe('PeopleListComponent', () => {
 
     // Verifica se a renderização ocorreu corretamente
     expect(loading).toBeNull();
-    expect(table).toBeNull();
+    expect(table).not.toBeNull();
     expect(empty).not.toBeNull();
   });
 

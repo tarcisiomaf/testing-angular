@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start:dev": "ng serve",
+    "postinstall": "npm run test ",
     "build": "ng build --aot --prod",
     "start": "node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mock": "json-server -p 3500 api.json"
+    "mock": "json-server -p 3500 db.json"
   },
   "engines": {
     "node": "10.16.2",

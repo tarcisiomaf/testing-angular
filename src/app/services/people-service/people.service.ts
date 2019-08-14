@@ -8,7 +8,7 @@ const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-const apiUrl = 'https://localhost:3000/people';
+const apiUrl = 'https://my-json-server.typicode.com/tarcisiomaf/testing-angular/people';
 
 @Injectable({
   providedIn: 'root'
